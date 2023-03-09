@@ -1,6 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/text_field_screen.dart';
+
 class CreateKPIForm extends StatefulWidget {
   final Function onSave;
 
@@ -11,6 +13,15 @@ class CreateKPIForm extends StatefulWidget {
 }
 
 class _CreateKPIFormState extends State<CreateKPIForm> {
+
+  final _textFieldController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    _textFieldController.dispose();
+    super.dispose();
+  }
 
    final List<String> years = [
   '2020',
@@ -35,11 +46,12 @@ class _CreateKPIFormState extends State<CreateKPIForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      padding:  EdgeInsets.all(15),
       margin: EdgeInsets.all(20),
       color: Colors.white,
       width: 400,
       child: Form(
+        
         key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,12 +59,27 @@ class _CreateKPIFormState extends State<CreateKPIForm> {
     
           children: [
             TextFormField(
+              controller: _textFieldController,
               decoration: InputDecoration(
                 labelText: 'KPI Name',
                 border: OutlineInputBorder(),               
               ),
               onSaved: (value) {
                 _kpiName = value!;
+              },
+            ),
+             ElevatedButton(
+              child: Text('Open Input Screen'),
+              onPressed: () async {
+                // Navigate to the input screen and wait for the result.
+                final result = await Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InputScreen()),
+                );
+                // Update the TextField with the result.
+                setState(() {
+                  _textFieldController.text = result;
+                });
               },
             ),
     

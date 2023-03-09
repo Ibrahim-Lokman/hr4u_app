@@ -3,6 +3,7 @@ import 'package:hr4u_app/kpi_management/models/kpi_provider.dart';
 import 'package:hr4u_app/kpi_management/screens/view_kpi_details_screen.dart';
 import 'package:provider/provider.dart';
 import './kpi_management/screens/home_page.dart';
+import 'kpi_management/screens/text_field_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => KPIProvider(),
         ),
+        
       ],
       child: MaterialApp(
         
