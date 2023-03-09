@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hr4u_app/kpi_management/models/kpi_provider.dart';
-import 'package:hr4u_app/kpi_management/screens/view_kpi_details_screen.dart';
 import 'package:provider/provider.dart';
-import './kpi_management/screens/home_page.dart';
-import 'kpi_management/screens/text_field_screen.dart';
+import 'kpi_management/screens/pms_planning_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,11 +25,12 @@ class MyApp extends StatelessWidget {
         title: 'HR4U',
         theme: ThemeData(
           primarySwatch: Colors.red,
+          canvasColor: Color.fromARGB(255, 211, 211, 211),
         ),
-        home: const HomePage(),
+        home: const PMSPlanningPage(),
 
          routes: {
-            ViewKpiDetailsScreen.routeName: (ctx) => ViewKpiDetailsScreen(),
+            //ViewKpiDetailsScreen.routeName: (ctx) => ViewKpiDetailsScreen(),
           }
       ),
     );
