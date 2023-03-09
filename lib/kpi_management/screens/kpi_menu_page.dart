@@ -68,7 +68,7 @@ class KpiMenuItems extends StatelessWidget {
             children: [
               KpiMenuCard("KPI Group", "Core Individual KPI 2.1",),
               KpiMenuCard("KPI Weightage", "15",),
-              KpiMenuCard("PI", "Crimson Product Portfolio",),
+              KpiMenuCard("KPI", "Crimson Product Portfolio",),
               
               
               Row(
