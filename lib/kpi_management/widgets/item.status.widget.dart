@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
 
+import '../screens/kpi_menu_page.dart';
+
 
 class kpi_item_status_widget extends StatelessWidget {
   final String title;
@@ -17,7 +19,12 @@ class kpi_item_status_widget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: Colors.red,
-      onTap: (){print("object");},
+      onTap: (){
+        Navigator.of(context).pushNamed(
+                  KpiMenuPage.routeName, 
+                  arguments: title,
+                  );
+      },
       child: Container(
         alignment: Alignment.topLeft,
         padding: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
@@ -43,7 +50,7 @@ class kpi_item_status_widget extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Chip(  
                     label:  Text(status,  
-                    style: TextStyle(color: Colors.white)),
+                    style: TextStyle(color: Colors.white,)),
                     backgroundColor: color,
                   ),
                 ),

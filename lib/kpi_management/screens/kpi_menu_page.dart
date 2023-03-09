@@ -6,53 +6,41 @@ import '../widgets/kpi_widget.dart';
 
 
 class KpiMenuPage extends StatefulWidget {
+  static const routeName = '/view-kpi-menu-details';
   const KpiMenuPage({super.key,});
   @override
   State<KpiMenuPage> createState() => _KpiMenuPageState();
 }
 
 class _KpiMenuPageState extends State<KpiMenuPage> {
-
-
-
   @override
   Widget build(BuildContext context) {
 
-
+    final String title = ModalRoute.of(context)!.settings.arguments as String;
     
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      drawer: Drawer(),
+      //resizeToAvoidBottomInset: false,
+ 
       appBar: AppBar(
         centerTitle: true,
         elevation: 5,
         
-        title: const Text(
-          'Core Individual KPIs',
+        title: Text(
+          title,
           ),
         backgroundColor: Color.fromARGB(255, 226, 28, 51),
 
       ),
 
-      body: Column(
-        children: [
-          SizedBox(height: 15,),
-          ListView.builder(
+      body: ListView.builder(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: 3,
+            itemCount: 4,
             itemBuilder: (context, index) {
-        
-              return SingleChildScrollView(
-                physics: ScrollPhysics(),
-                child: KpiMenuItems()
-                );
+              return KpiMenuItems();
              },
         ),
-           
-        
-        ],
-      ),
+    
     );
   }
 }
@@ -64,12 +52,13 @@ class KpiMenuItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double? fontscaler = 1.4;
     return Column(
       children: [
         SizedBox(height: 15,),
         Container(
           padding: EdgeInsets.all(10),
-          height: 250,
+          height: 260,
           width: 440,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -77,47 +66,11 @@ class KpiMenuItems extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(17.0),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 150,
-                    //  color: Colors.red,
-                      child: Text("KPI Group", textScaleFactor: 1.2,)
-                      ),
-                    
-                    Text("Core Individual KPI 2.1", textScaleFactor: 1.2)
-                  ],
-                ),
-              ),
-             Padding(
-               padding: const EdgeInsets.all(17.0),
-               child: Row(
-                  children: [
-                    Container(
-                      width: 150,
-                     // color: Colors.red,
-                      child: Text("KPI Weightage", textScaleFactor: 1.2,)
-                      ),
-                    
-                    Text("15", textScaleFactor: 1.2)
-                  ],
-                ),
-             ),
-              Padding(
-                padding: const EdgeInsets.all(17.0),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 150,
-                      child: Text("KPI", textScaleFactor: 1.2,)
-                      ),
-                    
-                    Text("Crimson Product Portfolio", style: TextStyle(fontSize: 12),)
-                  ],
-                ),
-              ),
+              KpiMenuCard("KPI Group", "Core Individual KPI 2.1",),
+              KpiMenuCard("KPI Weightage", "15",),
+              KpiMenuCard("PI", "Crimson Product Portfolio",),
+              
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
 
@@ -125,24 +78,43 @@ class KpiMenuItems extends StatelessWidget {
                   Spacer(),
                   Container(
                     width: 150,
+                    height: 50,
                     child: ElevatedButton(
                         onPressed: () {},
-                        
-                        child: const Text('View Details'),
+                        child: Row(
+                          children: [
+                            Icon(Icons.remove_red_eye_outlined, color: Colors.white),
+                            SizedBox(width: 10,),
+                            const Text('View Details',textScaleFactor: 1),
+                          ],
+                        ),
                     ),
                   ),
                   
                   Spacer(),
                   Container(
                     width: 150,
-                    child: ElevatedButton(
-                        
+                    height: 50,
+                    child: OutlinedButton(
+                      
+                        style:  OutlinedButton.styleFrom(
+                              side: BorderSide(width: 1.0, color: Colors.red),
+                              backgroundColor: Colors.white,
+                              ),
                         onPressed: () {},
-                        child: const Text('Edit'),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.edit_outlined, color: Colors.red,),
+                            SizedBox(width: 10,),
+                            const Text('Edit', textScaleFactor: 1.2, style: TextStyle(color: Colors.red),),
+                          ],
+                        ),
                     ),
                   ),
                   Spacer(),
-                  Icon(Icons.add_circle),
+                  Container(
+                    child: Icon(Icons.add_circle, color: Colors.red,size: 50, )),
                   
                   Spacer(),
                 ],
@@ -153,6 +125,39 @@ class KpiMenuItems extends StatelessWidget {
         ),
         
       ],
+    );
+  }
+}
+
+class KpiMenuCard extends StatelessWidget {
+  const KpiMenuCard(
+     this.title,
+     this.value
+  );
+  final String title;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    double? fontscaler = 1.4;
+    return Padding(
+      padding: const EdgeInsets.only(
+        bottom: 17.0,
+        left: 23,
+        top: 10
+        
+        ),
+      child: Row(
+        children: [
+          Container(
+            width: 150,
+          //  color: Colors.red,
+            child: Text(title, textScaleFactor: fontscaler)
+            ),
+          
+          Text(value, textScaleFactor: fontscaler)
+        ],
+      ),
     );
   }
 }

@@ -5,13 +5,13 @@ import '../widgets/forms_widget.dart';
 import '../widgets/kpi_widget.dart';
 
 
-class PMSPlanningPage extends StatefulWidget {
-  const PMSPlanningPage({super.key,});
+class PmsPlanningPage extends StatefulWidget {
+  const PmsPlanningPage({super.key,});
   @override
-  State<PMSPlanningPage> createState() => _PMSPlanningPageState();
+  State<PmsPlanningPage> createState() => _PmsPlanningPageState();
 }
 
-class _PMSPlanningPageState extends State<PMSPlanningPage> {
+class _PmsPlanningPageState extends State<PmsPlanningPage> {
   final List<String> years = [
   '2020',
   '2021',

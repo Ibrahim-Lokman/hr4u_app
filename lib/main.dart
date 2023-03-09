@@ -25,13 +25,14 @@ class MyApp extends StatelessWidget {
         
         title: 'HR4U',
         theme: ThemeData(
+          fontFamily: 'Nunito',
           primarySwatch: Colors.red,
           canvasColor: Color.fromARGB(255, 211, 211, 211),
         ),
-        home: const KpiMenuPage(),
+        home: const PmsPlanningPage(),
 
          routes: {
-            //ViewKpiDetailsScreen.routeName: (ctx) => ViewKpiDetailsScreen(),
+            KpiMenuPage.routeName: (ctx) => KpiMenuPage(),
           }
       ),
     );
