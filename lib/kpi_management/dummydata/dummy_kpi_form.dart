@@ -12,8 +12,8 @@ List<List<dynamic>> dummy_form_items = [
       ["Behavioural KPI 2021", "Accepted", Colors.green],
       ["Development Plan", "Accepted", Colors.green],
       ["Change Yourself", "Accepted", Colors.green],
-      ["Development Plan \n[T&D] : Employee 2021", "Accepted", Colors.green],
-      ["Mobility & Career \nAspirations", "Accepted", Colors.green],
+      ["Development Plan [T&D] : Employee 2021", "Accepted", Colors.green],
+      ["Mobility & Career Aspirations", "Accepted", Colors.green],
   ];
 
   

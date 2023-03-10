@@ -26,8 +26,9 @@ class MyApp extends StatelessWidget {
         title: 'HR4U',
         theme: ThemeData(
           fontFamily: 'Nunito',
-          primarySwatch: Colors.red,
-          canvasColor: Color.fromARGB(255, 211, 211, 211),
+         // primarySwatch: Color(0xFFEC1940),
+          primaryColor:Color(0xFFEC1940),
+          canvasColor: Color(0xFFE5E5E5),
         ),
         home: const PmsPlanningPage(),
 

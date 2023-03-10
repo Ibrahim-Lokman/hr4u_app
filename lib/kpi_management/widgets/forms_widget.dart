@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../dummydata/dummy_kpi_form.dart';
-import 'item.status.widget.dart';
+import './item_status_widget.dart';
 
-class Forms_widget extends StatelessWidget {
+class FormsWidget extends StatelessWidget {
      List<List<dynamic>> form_items = dummy_form_items;
   
   //const Forms_widget({
@@ -17,7 +17,9 @@ class Forms_widget extends StatelessWidget {
       width: 440,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(10)
+        ),
       ),
       
       child: Column(
@@ -32,7 +34,10 @@ class Forms_widget extends StatelessWidget {
             ),
             child: Text(
               "Forms (5)",
-              textScaleFactor: 1.6,
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'Nunito-SemiBold', 
+              ),
               ),
           ),
           
@@ -46,7 +51,7 @@ class Forms_widget extends StatelessWidget {
                   itemCount: form_items.length,
                   itemBuilder: (context, index) {
                     final item = form_items[index];
-                    return kpi_item_status_widget(item[0], item[1],item[2],);
+                    return ItemStatusWidget(item[0], item[1]);
                    },
                   ),
               ],

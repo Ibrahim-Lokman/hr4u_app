@@ -18,14 +18,12 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
   '2022',
   '2023',
  ];
-  String? selectedValue;
+ String? selectedValue;
  final _formKey = GlobalKey<FormState>();
 
 
   @override
   Widget build(BuildContext context) {
-
-
     
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -36,11 +34,12 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 5,
-        
         title: const Text(
           'PMS Planning',
+          style: TextStyle(fontSize: 18, fontFamily: 'Nunito-Medium'),
+ 
           ),
-        backgroundColor: Color.fromARGB(255, 226, 28, 51),
+        backgroundColor: Color(0xFFEC1940),
 
       ),
 
@@ -54,11 +53,17 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
                 right: 20
                 ),
               color: Colors.white,
-              width: 500,
+              width: 490,
               child: DropdownButtonFormField2(
               decoration: InputDecoration(
 
                 labelText: "Select Year",
+                labelStyle: TextStyle(
+                 fontSize: 12,
+                 fontFamily: 'Nunito-Medium', 
+                 letterSpacing: 0.4,
+                ),
+              
                 border: OutlineInputBorder(),
               ),
              // isExpanded: true,
@@ -89,9 +94,9 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
             ),
           SizedBox(height: 12,),
 
-          KPI_widget(),
+          KpiWidget(),
           SizedBox(height: 12,),
-          Forms_widget(),
+          FormsWidget(),
           SizedBox(height: 12,),
           Container(
             
@@ -100,9 +105,19 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
             padding: EdgeInsets.all(20),
             child: Container(
               height: 50,
+              
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFEC1940),
+                ),
                 onPressed: () {},
-                child: const Text('Send bulk to supervisor', textScaleFactor: 1.5),
+                child: const Text(
+                  'Send bulk to supervisor', 
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: 'Nunito-Bold', 
+                    ),
+                ),
               ),
             ),
           ),

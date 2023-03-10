@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'item.status.widget.dart';
+import './item_status_widget.dart';
 import '../dummydata/dummy_kpi_form.dart';
 
-class KPI_widget extends StatelessWidget {
+class KpiWidget extends StatelessWidget {
   List<List<dynamic>> kpi_items = dummy_kpi_items;
  // const KPI_widget({
  //   super.key,
@@ -12,15 +12,13 @@ class KPI_widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
-      height: 290,
-      width: 440,
+      height: 295,
+      width: 450,
       child: Column(
-        
         children: [
           Container(
             alignment: Alignment.topLeft,
@@ -32,8 +30,11 @@ class KPI_widget extends StatelessWidget {
             ),
             child: Text(
               "KPI (4)",
-              textScaleFactor: 1.6,
+              style: TextStyle(
+                fontSize: 17,
+                fontFamily: 'Nunito-SemiBold', 
               ),
+            ),
           ),
           
           ListView.builder(
@@ -42,7 +43,7 @@ class KPI_widget extends StatelessWidget {
             itemCount: kpi_items.length,
             itemBuilder: (context, index) {
               final item = kpi_items[index];
-              return kpi_item_status_widget(item[0], item[1],item[2],);
+              return ItemStatusWidget(item[0], item[1]);
              },
         ),
          

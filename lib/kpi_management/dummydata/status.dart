@@ -1,6 +1,6 @@
-enum MyStatus {
+enum myStatus {
   accepted,
   pending,
   reverted,
-  open,
+  open
 }

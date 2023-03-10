@@ -89,6 +89,7 @@ flutter:
         - asset: assets/fonts/Nunito-Black.ttf
         - asset: assets/fonts/Nunito-BlackItalic.ttf
         - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
         - asset: assets/fonts/Nunito-BoldItalic.ttf
         - asset: assets/fonts/Nunito-ExtraBoldItalic.ttf
 
