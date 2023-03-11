@@ -47,6 +47,7 @@ class KpiMenuItems extends StatelessWidget {
                               color: Colors.white,
                               size: 14,
                             ),
+                            // Image.asset("assets/icons/eye_2.png"),
                             SizedBox(width: 10,),
                             const Text(
                               'View Details',
@@ -83,6 +84,7 @@ class KpiMenuItems extends StatelessWidget {
                               color: Color(0xFFEC1940),
                               size: 14,
                               ),
+                            // Image.asset("assets/icons/pencil_2.png"),
                             SizedBox(width: 10,),
                             const Text(
                               'Edit', 

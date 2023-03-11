@@ -97,7 +97,7 @@ class ItemStatusWidget extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                // Icon(Icons.mail_outlined, color: Colors.red,)
+
                 kpiStatusString == "Reverted" ? badges.Badge(
                       badgeContent: Text(
                         '1', 
@@ -105,6 +105,7 @@ class ItemStatusWidget extends StatelessWidget {
                           color: Colors.white
                           ),
                         ),
+                      //child: Image.asset("assets/icons/message.png"),
                       child: Icon(
                         Icons.mail_outline, 
                         color:Color(0xFFEC1940),
