@@ -41,21 +41,18 @@ class FormsWidget extends StatelessWidget {
               ),
           ),
           
-          SingleChildScrollView(
-            physics: ScrollPhysics(),
-            child: Column(
-              children: [
-                ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: form_items.length,
-                  itemBuilder: (context, index) {
-                    final item = form_items[index];
-                    return ItemStatusWidget(item[0], item[1]);
-                   },
-                  ),
-              ],
-            ),
+          Column(
+            children: [
+              ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: form_items.length,
+                itemBuilder: (context, index) {
+                  final item = form_items[index];
+                  return ItemStatusWidget(item[0], item[1]);
+                 },
+                ),
+            ],
           ),
           ],
       ),

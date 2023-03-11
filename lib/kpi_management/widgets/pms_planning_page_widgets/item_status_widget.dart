@@ -97,8 +97,8 @@ class ItemStatusWidget extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-
-                kpiStatusString == "Reverted" ? badges.Badge(
+                kpiStatusString == "Reverted" 
+                ? badges.Badge(
                       badgeContent: Text(
                         '1', 
                         style: TextStyle(
@@ -111,9 +111,10 @@ class ItemStatusWidget extends StatelessWidget {
                         color:Color(0xFFEC1940),
                         size: 30,
                       ),
-                     ) : Spacer(),
+                     )
+                 : Spacer(),
                 Spacer(),
-                Spacer(),
+
                 Icon(Icons.arrow_forward_ios, size: 15,),
                 
               ],
