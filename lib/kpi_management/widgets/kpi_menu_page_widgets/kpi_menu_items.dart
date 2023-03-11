@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'kpi_menu_card.dart';
+import '../kpi_menu_page_widgets/kpi_menu_card.dart';
 
 class KpiMenuItems extends StatelessWidget {
   const KpiMenuItems({

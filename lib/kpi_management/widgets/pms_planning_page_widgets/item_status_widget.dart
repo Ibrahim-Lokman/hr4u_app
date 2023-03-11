@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import '../../providers/status_enum.dart';
 
-import '../screens/kpi_menu_page.dart';
+import '../../screens/kpi_menu_page.dart';
 
 
 class ItemStatusWidget extends StatelessWidget {
   final String title;
-  final String status;
+  final kpiStatus status;
 
    ItemStatusWidget(
    this.title, 
    this.status,
 );
 
-  Color? getcolor(String value) {
+  Color getcolor(String value) {
     switch(value)
         {
           case "Accepted" :
@@ -36,6 +37,7 @@ class ItemStatusWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String kpiStatusString = status.toString().substring(10);
     return InkWell(
       splashColor: Color(0xFFEC1940),
       onTap: (){
@@ -83,19 +85,20 @@ class ItemStatusWidget extends StatelessWidget {
                   height: 30,
                   alignment: Alignment.center,
                   child: Chip(  
-                    label:  Text(status,  
+                    label:  Text(
+                    kpiStatusString,  
                     style: TextStyle(
                       fontSize: 10,
                       fontFamily: 'Nunito-SemiBold', 
                       color: Colors.white
                       ),
                     ),
-                    backgroundColor: getcolor(status),
+                    backgroundColor: getcolor(kpiStatusString),
                   ),
                 ),
                 Spacer(),
                 // Icon(Icons.mail_outlined, color: Colors.red,)
-                status == "Reverted" ? badges.Badge(
+                kpiStatusString == "Reverted" ? badges.Badge(
                       badgeContent: Text(
                         '1', 
                         style: TextStyle(

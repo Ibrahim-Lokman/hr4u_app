@@ -38,3 +38,15 @@ style: TextStyle(
 
 
 */
+
+
+
+/*
+
+kpiStatus enum added,
+File restructured,
+Font size added accorinding to figma design,
+Color added accorinding to figma design,
+
+
+*/

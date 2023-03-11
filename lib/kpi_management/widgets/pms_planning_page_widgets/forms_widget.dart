@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../dummydata/dummy_kpi_form.dart';
-import './item_status_widget.dart';
+import '../../providers/dummy_form_items.dart';
+import 'item_status_widget.dart';
 
 class FormsWidget extends StatelessWidget {
      List<List<dynamic>> form_items = dummy_form_items;

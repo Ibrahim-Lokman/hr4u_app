@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './item_status_widget.dart';
-import '../dummydata/dummy_kpi_form.dart';
+import 'item_status_widget.dart';
+import '../../providers/dummy_kpi_items.dart';
 
 class KpiWidget extends StatelessWidget {
   List<List<dynamic>> kpi_items = dummy_kpi_items;

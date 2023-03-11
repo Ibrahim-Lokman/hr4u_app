@@ -1,8 +1,8 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/forms_widget.dart';
-import '../widgets/kpi_widget.dart';
+import '../widgets/pms_planning_page_widgets/forms_widget.dart';
+import '../widgets/pms_planning_page_widgets/kpi_widget.dart';
 
 
 class PmsPlanningPage extends StatefulWidget {
