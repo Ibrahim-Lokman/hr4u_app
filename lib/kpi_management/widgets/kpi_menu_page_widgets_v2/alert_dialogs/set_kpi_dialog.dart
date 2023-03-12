@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hr4u_app/kpi_management/widgets/kpi_menu_page_widgets_v2/reset_dialog.dart';
+import './reset_dialog.dart';
 
 class SetKpiDialog extends StatefulWidget {
   @override

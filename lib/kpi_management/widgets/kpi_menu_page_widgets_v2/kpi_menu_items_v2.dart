@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'kpi_menu_card_v2.dart';
-import 'set_kpi_dialog.dart';
+import 'alert_dialogs/set_kpi_dialog.dart';
 
 class KpiMenuItemsV2 extends StatefulWidget {
   const KpiMenuItemsV2({

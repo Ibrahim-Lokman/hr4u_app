@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
-import 'package:hr4u_app/kpi_management/widgets/pms_planning_page_widgets/reverted_message_dialog.dart';
+import 'package:hr4u_app/kpi_management/widgets/pms_planning_page_widgets/alert_dialogs/reverted_message_dialog.dart';
 import '../../providers/status_enum.dart';
 
 import '../../screens/kpi_menu_page.dart';
