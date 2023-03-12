@@ -1,5 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:hr4u_app/kpi_management/widgets/pms_planning_page_widgets/Submit_all_alert_dialog.dart';
 
 import '../widgets/pms_planning_page_widgets/forms_widget.dart';
 import '../widgets/pms_planning_page_widgets/kpi_widget.dart';
@@ -110,7 +111,11 @@ class _PmsPlanningPageState extends State<PmsPlanningPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFFEC1940),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                              context: context, builder: (context) => SubmitAllAlertDialog()
+                            );
+                },
                 child: const Text(
                   'Send bulk to supervisor', 
                   style: TextStyle(

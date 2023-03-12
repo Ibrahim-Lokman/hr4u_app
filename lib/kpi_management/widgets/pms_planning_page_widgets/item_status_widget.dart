@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:hr4u_app/kpi_management/widgets/pms_planning_page_widgets/reverted_message_dialog.dart';
 import '../../providers/status_enum.dart';
 
 import '../../screens/kpi_menu_page.dart';
@@ -106,13 +107,24 @@ class ItemStatusWidget extends StatelessWidget {
                           ),
                         ),
                       //child: Image.asset("assets/icons/message.png"),
-                      child: Icon(
-                        Icons.mail_outline, 
-                        color:Color(0xFFEC1940),
-                        size: 30,
+                      child: GestureDetector(
+                        
+                        onTap: (){
+                          showDialog(
+                              context: context, builder: (context) => ShowRevertedMessage()
+                            );
+                          },
+                        child: Icon(
+                          
+                          Icons.mail_outline, 
+                          color:Color(0xFFEC1940),
+                          size: 30,
+                      
+                        ),
                       ),
                      )
                  : Spacer(),
+                Spacer(),
                 Spacer(),
 
                 Icon(Icons.arrow_forward_ios, size: 15,),

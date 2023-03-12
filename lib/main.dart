@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
 
        routes: {
           KpiMenuPage.routeName: (ctx) => KpiMenuPage(),
+          
         }
     );
   }

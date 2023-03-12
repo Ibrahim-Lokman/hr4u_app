@@ -1,9 +1,7 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 
-import '../widgets/pms_planning_page_widgets/forms_widget.dart';
-import '../widgets/pms_planning_page_widgets/kpi_widget.dart';
 import '../widgets/kpi_menu_page_widgets/kpi_menu_items.dart';
+import '../widgets/kpi_menu_page_widgets_v2/kpi_menu_items_v2.dart';
 
 
 class KpiMenuPage extends StatefulWidget {
@@ -45,7 +43,7 @@ class _KpiMenuPageState extends State<KpiMenuPage> {
               shrinkWrap: true,
               itemCount: 4,
               itemBuilder: (context, index) {
-                return KpiMenuItems();
+                return KpiMenuItemsV2();
                },
           ),
       ),

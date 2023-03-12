@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'item_status_widget.dart';
+import './item_status_widget.dart';
 import '../../providers/dummy_kpi_items.dart';
 
 class KpiWidget extends StatelessWidget {
