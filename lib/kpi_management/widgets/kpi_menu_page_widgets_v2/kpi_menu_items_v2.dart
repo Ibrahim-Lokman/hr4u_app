@@ -22,13 +22,13 @@ class _KpiMenuItemsV2State extends State<KpiMenuItemsV2> {
         SizedBox(height: 8,),
         Container(
           padding: EdgeInsets.only(
-            top: 40,
-            bottom: 20,
+            top: 47,
+            bottom: 10,
             left: 30,
-            right:30,
+            right:20,
             ),
-          height: 250,
-          width: 455,
+        //  height: 250,
+         // width: 455,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -38,15 +38,13 @@ class _KpiMenuItemsV2State extends State<KpiMenuItemsV2> {
               KpiMenuCardV2("KPI Group", "Core Individual KPI 2.1",),
               KpiMenuCardV2("KPI Weightage", "--",),
               KpiMenuCardV2("KPI", "--",),
-              SizedBox(height: 24,),
+              SizedBox(height: 9,),
               
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                        width: 90,
-                        height: 40,
-                       
+
                         child: OutlinedButton(
                           
                             style:  OutlinedButton.styleFrom(
@@ -59,14 +57,20 @@ class _KpiMenuItemsV2State extends State<KpiMenuItemsV2> {
                             onPressed: () {
                               showDialog(context: context, builder: (context) => SetKpiDialog());
                             },
-                            child: Text(
-                                  'Set KPI', 
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Nunito-Medium', 
-                                    color: Color(0xFFEC1940),
-                                  ),
-                                  ),
+                            child: Container(
+                              margin: EdgeInsets.all(
+            5
+            ),
+                              child: Text(
+                                
+                                    'Set KPI', 
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontFamily: 'Nunito-Medium', 
+                                      color: Color(0xFFEC1940),
+                                    ),
+                                    ),
+                            ),
                         ),
                       ),
                 ],

@@ -139,16 +139,13 @@ class _SetKpiDialogState extends State<SetKpiDialog> {
             SizedBox(height: 180,),
             Container(
               color: Colors.white,
-              width: 500,
+              width: (MediaQuery.of(context).size.width),
               height: 90,
               padding: EdgeInsets.all(20),
               
               child: Container(
-              color: Colors.green,
-              margin: EdgeInsets.only(
-                left: 150,
-                right: 150,
-              ),
+               padding: EdgeInsets.all(10),
+             
                 child: ElevatedButton(
                   
                       onPressed: () {

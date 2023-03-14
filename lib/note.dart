@@ -50,3 +50,25 @@ Color added accorinding to figma design,
 
 
 */
+
+
+
+/*
+MediaQuery
+
+
+(MediaQuery.of(context).size.height - appBar.preferredSize.height - MediaQuery.of(context).padding.top)
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

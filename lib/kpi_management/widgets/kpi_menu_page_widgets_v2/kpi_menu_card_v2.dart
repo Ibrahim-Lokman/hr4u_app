@@ -15,12 +15,14 @@ class KpiMenuCardV2 extends StatelessWidget {
       padding: const EdgeInsets.only(
         bottom: 17.0,
         left: 23,
-        top: 10
+        top: 10,
+        right: 20
         ),
       child: Row(
         children: [
           Container(
-            width: 150,
+           // color: Colors.red,
+           width: 90,
           //  color: Colors.red,
             child: Text(
               title, 
@@ -31,6 +33,7 @@ class KpiMenuCardV2 extends StatelessWidget {
               ),
             ),
           ),
+          
           
           Text( 
             value, 

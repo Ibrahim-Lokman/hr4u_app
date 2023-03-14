@@ -47,92 +47,105 @@ class ItemStatusWidget extends StatelessWidget {
                   arguments: title,
                   );
       },
-      child: Container(
-        alignment: Alignment.topLeft,
-        padding: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 5),
-        child: Column(
-          children: [
-            Container(
-              width: 410, 
-             // padding: EdgeInsets.all(0),
-              child: Divider(
-                      color: Colors.grey,
-                    ),
-            ),
-            Row(
-              children: [
-                Container(
-                  width: 140,
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: Column(
-                          children: [
-                            Text(
-                              title,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontFamily: 'Nunito-Regular',
-                              ),  
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+      child: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width*0.8058, 
+            child: Divider(
+                    color: Colors.grey,
                   ),
-                ),
-                Spacer(),
-                Container(
-                  height: 30,
-                  alignment: Alignment.center,
-                  child: Chip(  
-                    label:  Text(
-                    kpiStatusString,  
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontFamily: 'Nunito-SemiBold', 
-                      color: Colors.white
-                      ),
-                    ),
-                    backgroundColor: getcolor(kpiStatusString),
+          ),
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                  left: 15
                   ),
-                ),
-                Spacer(),
-                kpiStatusString == "Reverted" 
-                ? badges.Badge(
-                      badgeContent: Text(
-                        '1', 
-                        style: TextStyle(
-                          color: Colors.white
+                width: MediaQuery.of(context).size.width*0.3536,
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: Column(
+                        children: [
+                          Text(
+                            title,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Nunito-Regular',
+                            ),  
                           ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 10,),
+              Container(
+                margin: EdgeInsets.all(5),
+               // color: Colors.red,
+              height: 30, //
+              //  alignment: Alignment,
+                child: Chip(  
+
+                  label:  Text(
+                  kpiStatusString,  
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontFamily: 'Nunito-SemiBold', 
+                    color: Colors.white
+                    ),
+                  ),
+                  backgroundColor: getcolor(kpiStatusString),
+                ),
+              ),
+              Spacer(),
+              kpiStatusString == "Reverted" 
+              ? badges.Badge(
+                    badgeContent: Text(
+                      '1', 
+                      style: TextStyle(
+                        color: Colors.white
                         ),
-                      //child: Image.asset("assets/icons/message.png"),
-                      child: GestureDetector(
+                      ),
+                    //child: Image.asset("assets/icons/message.png"),
+                    child: GestureDetector(
+                      
+                      onTap: (){
+                        showDialog(
+                            context: context, builder: (context) => ShowRevertedMessage()
+                          );
+                        },
+                      child: Container(
                         
-                        onTap: (){
-                          showDialog(
-                              context: context, builder: (context) => ShowRevertedMessage()
-                            );
-                          },
+                        padding: EdgeInsets.only(
+                          left:5,
+                          ),
                         child: Icon(
-                          
+                        
                           Icons.mail_outline, 
                           color:Color(0xFFEC1940),
                           size: 30,
-                      
+                                          
                         ),
                       ),
-                     )
-                 : Spacer(),
-                Spacer(),
-                Spacer(),
-
-                Icon(Icons.arrow_forward_ios, size: 15,),
-                
-              ],
-            ),
-          ],
-        ),
+                    ),
+                   )
+               : Spacer(),
+              Spacer(),
+              Spacer(),
+          
+              Padding(
+                padding: const EdgeInsets.only(right: 22),
+                child: Icon(
+                  Icons.arrow_forward_ios, 
+                  size: 12,
+                  ),
+              ),
+              
+            ],
+          ),
+        ],
       ),
     );
   }
